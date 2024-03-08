@@ -2,16 +2,18 @@
 
 This is a custom endpoint for Directus that allows you to retrieve place data from the Google Places API.
 
-## Installation
+## Installation:
 
-Set the environment variables in your system or in a .env file in the root of your project:
+Ensure your Directus project is configured for Redis. https://docs.directus.io/self-hosted/config-options.html#redis
+
+Add the following environment variables to your project:
 
 ```env
-GOOGLE_PLACE_ID=your-google-place-id
 GOOGLE_API_KEY=your-google-api-key
-REDIS_URL=your-redis-url
-REDIS_CACHE_KEY=your-redis-cache-key
-REDIS_CACHE_HOURS=your-redis-cache-hours
+GOOGLE_PLACE_ID=your-google-place-id
+
+REDIS_DGPE_CACHE_KEY=your-redis-dgpe-cache-key
+REDIS_DGPE_CACHE_HOURS=your-redis-dgpe-cache-hours
 ```
 
 ## Usage
@@ -35,4 +37,4 @@ This plugin currently retrieves the following data:
 -   currentOpeningHours
 -   reviews
 
-Future plans are to add a configuration panel.
+In the future I would like to add a configuration panel to customize data requests.

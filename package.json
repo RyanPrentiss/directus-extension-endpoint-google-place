@@ -1,40 +1,42 @@
 {
-	"name": "@rockdog/directus-extension-endpoint-google-place",
-	"description": "A Directus extension to fetch Google Places data",
-	"icon": "extension",
-	"version": "1.1.0",
-	"author": {
-		"name": "Rock Dog Interactive",
-		"email": "info@rockdog.dev"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/RyanPrentiss/directus-extension-endpoint-google-place.git"
-	},
-	"license": "MIT",
-	"keywords": [
-		"directus",
-		"directus-extension",
-		"directus-custom-endpoint"
-	],
-	"type": "module",
-	"directus:extension": {
-		"type": "endpoint",
-		"path": "dist/index.js",
-		"source": "src/index.ts",
-		"host": "^10.3.1"
-	},
-	"scripts": {
-		"build": "directus-extension build",
-		"dev": "directus-extension build -w --no-minify",
-		"link": "directus-extension link"
-	},
-	"devDependencies": {
-		"@directus/extensions-sdk": "10.3.1",
-		"@types/node": "^20.11.16",
-		"typescript": "^5.3.3"
-	},
-	"dependencies": {
-		"ioredis": "^5.3.2"
-	}
+  "name": "@rockdog/directus-extension-endpoint-google-place",
+  "description": "A Directus extension to fetch Google Places data",
+  "icon": "extension",
+  "version": "0.0.0-development",
+  "author": {
+    "name": "Rock Dog Interactive",
+    "email": "info@rockdog.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanPrentiss/directus-extension-endpoint-google-place.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-endpoint"
+  ],
+  "type": "module",
+  "directus:extension": {
+    "type": "endpoint",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^10.3.1"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "semantic-release": "semantic-release --branches main"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "10.3.1",
+    "@types/node": "^20.11.16",
+    "typescript": "^5.3.3",
+    "semantic-release": "^23.0.2"
+  },
+  "dependencies": {
+    "ioredis": "^5.3.2"
+  }
 }
