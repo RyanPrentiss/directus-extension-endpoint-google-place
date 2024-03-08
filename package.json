@@ -11,6 +11,11 @@
     "type": "git",
     "url": "https://github.com/RyanPrentiss/directus-extension-endpoint-google-place"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "license": "MIT",
   "keywords": [
     "directus",
