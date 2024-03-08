@@ -39,7 +39,7 @@ export default {
                 // The key to store the cached data
                 const redis_key = `${ctx.env.REDIS_DGPE_CACHE_KEY}-google-place`
 
-                // Check if the data is cached
+                // Check for cached data
                 const cached_data = await redis_client.get(redis_key)
                 if (cached_data) {
                     res.json(JSON.parse(cached_data))
