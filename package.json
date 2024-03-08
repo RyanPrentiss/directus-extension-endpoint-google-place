@@ -2,7 +2,7 @@
   "name": "@rockdog/directus-extension-endpoint-google-place",
   "description": "A Directus extension to fetch Google Places data",
   "icon": "extension",
-  "version": "0.0.0-development",
+  "version": "2.0.0",
   "author": {
     "name": "Rock Dog Interactive",
     "email": "info@rockdog.dev"
