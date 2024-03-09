@@ -4,7 +4,9 @@ This is a custom endpoint for Directus that allows you to retrieve place data fr
 
 ## Installation:
 
-Ensure your Directus project is configured for Redis. https://docs.directus.io/self-hosted/config-options.html#redis
+Ensure your Directus project is configured for Redis.
+
+https://docs.directus.io/self-hosted/config-options.html#redis
 
 Add the following environment variables to your project:
 
