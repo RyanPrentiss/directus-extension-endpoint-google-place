@@ -31,11 +31,12 @@
     "semantic-release": "semantic-release --branches main"
   },
   "devDependencies": {
-    "@directus/extensions-sdk": "10.3.1",
-    "@types/node": "^20.11.16",
+    "@directus/env": "^1.1.1",
+    "@directus/extensions-sdk": "^11.0.2",
+    "@types/node": "^20.12.7",
     "cz-conventional-changelog": "^3.3.0",
-    "semantic-release": "^23.0.2",
-    "typescript": "^5.3.3"
+    "semantic-release": "^23.0.8",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "ioredis": "^5.3.2"

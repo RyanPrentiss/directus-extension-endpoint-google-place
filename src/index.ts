@@ -1,5 +1,25 @@
+import { useEnv } from '@directus/env'
 import type { EndpointConfig } from '@directus/extensions'
 import Redis from 'ioredis'
+
+// Create a new Redis client
+const env = useEnv()
+
+const redis_url =
+    env['REDIS'] ||
+    (env['REDIS_HOST'] &&
+    env['REDIS_PORT'] &&
+    env['REDIS_USERNAME'] &&
+    env['REDIS_PASSWORD']
+        ? `redis://${env['REDIS_USERNAME']}:${env['REDIS_PASSWORD']}@${env['REDIS_HOST']}:${env['REDIS_PORT']}`
+        : null)
+if (!redis_url) {
+    throw new Error(
+        'Missing Redis configuration. Either REDIS or REDIS_HOST, REDIS_PORT, REDIS_USERNAME, and REDIS_PASSWORD must be provided.'
+    )
+}
+
+const redis_client = new Redis(redis_url)
 
 export default {
     id: 'google-place',
@@ -19,23 +39,6 @@ export default {
                     }
                 })
 
-                // Get the Redis URL
-                const redis_url =
-                    ctx.env.REDIS ||
-                    (ctx.env.REDIS_HOST &&
-                    ctx.env.REDIS_PORT &&
-                    ctx.env.REDIS_USERNAME &&
-                    ctx.env.REDIS_PASSWORD
-                        ? `redis://${ctx.env.REDIS_USERNAME}:${ctx.env.REDIS_PASSWORD}@${ctx.env.REDIS_HOST}:${ctx.env.REDIS_PORT}`
-                        : null)
-                if (!redis_url) {
-                    throw new Error(
-                        'Missing Redis configuration. Either REDIS or REDIS_HOST, REDIS_PORT, REDIS_USERNAME, and REDIS_PASSWORD must be provided.'
-                    )
-                }
-
-                // Create a new Redis client
-                const redis_client = new Redis(redis_url)
                 // The key to store the cached data
                 const redis_key = `${ctx.env.REDIS_DGPE_CACHE_KEY}-google-place`
 
